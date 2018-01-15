@@ -1,13 +1,28 @@
 package com.github.itonyli;
 
-/**
- * Created by tony on 2017/10/10.
- */
+
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Hua {
 
-    public static void main(String[] args) {
+    private static final Logger logger = LoggerFactory.getLogger(Hua.class);
 
-        boolean bool = 1 == 12 && 2 == 3 || 2 == 2;
+    @Test
+    public void test() {
+        int result = -1;
+        try {
+            t();
+        } catch (Exception e) {
+            logger.debug("test: {}", result, e);
+        }
+
+    }
+
+
+    public void t() {
+        throw new RuntimeException("hh");
     }
 
 }
